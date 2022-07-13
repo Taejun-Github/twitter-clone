@@ -73,7 +73,7 @@
     </div>
     <!-- main section -->
     <div class="flex-1 flex h-screen">
-      <Messages></Messages>
+      <Profile/>
     </div>
   </div>
 </template>
@@ -82,8 +82,9 @@
 import Home from './pages/Home.vue';
 import Notifications from './pages/Notifications.vue';
 import Messages from './pages/Messages.vue';
+import Profile from './pages/Profile.vue';
 export default {
-  components: { Home, Notifications, Messages }
+  components: { Home, Notifications, Messages, Profile }
 }
 </script>
 
