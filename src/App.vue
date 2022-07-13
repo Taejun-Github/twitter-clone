@@ -73,7 +73,7 @@
     </div>
     <!-- main section -->
     <div class="flex-1 flex h-screen">
-      <Profile/>
+      <Home/>
     </div>
   </div>
 </template>
