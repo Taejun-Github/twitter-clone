@@ -1,7 +1,7 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-screen container mx-auto">
     <!-- side section -->
-    <div class="w-1/4 pt-5 ml-10 flex flex-col justify-between border-r border-gray-100">
+    <div class="w-20 md:w-1/4 lg:w-1/4 pt-5 lg:ml-10 md:ml-10 flex flex-col justify-between border-r border-gray-100">
       <!-- 로고와 메뉴바 -->
       <div class="flex flex-col items-center lg:items-start">
         <!-- flext items-center의 경우에는 원래 align-items: flex-start; 인데, 이것은 주 방향과 수직인 교차축에 관련된 것이다.
@@ -10,35 +10,35 @@
         <i class="fa-brands fa-airbnb text-5xl text-primary lg:ml-3 mb-5 mt-5"></i>
         <!-- side 메뉴 부분  -->
         <div class="flex flex-col items-start">
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-house-user fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">Home</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-hashtag fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">HashTag</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-bell fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">Alarm</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-message fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">Message</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-bookmark fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">BookMark</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-list fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">List</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-user fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">Profile</span>
           </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2">
+          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
             <i class="fa-solid fa-angles-right fa-fw text-2xl"></i>
             <span class="ml-5 text-lg hidden lg:inline-block md:inline-block">More</span>
           </div>
@@ -71,144 +71,19 @@
         </div>
       </div>
     </div>
-
-    <div class="flex-1">
-      <div class="flex h-screen">
-        <!-- main section -->
-        <div class="flex-1 border-r border-gray-100 overflow-y-auto">
-          <div class="flex flex-col">
-            <!-- page title -->
-            <div class="border-b border-gray-100 px-3 py-2 font-bold test-lg">홈</div>
-            <!-- tweeting section -->
-            <div class="flex px-3 py-3 border-b-8 border-gray-200">
-              <img src="http://picsum.photos/200" class="w-10 h-10 rounded-full hover:opacity-80 m-2 cursor-pointer" />
-              <div class="flex-1 flex flex-col ml-2">
-                <textarea placeholder="입력하세요"
-                  class="w-full test-lg font-bold focus:outline-none mb-3 mt-2 mr-2 resize-none"></textarea>
-                <div class="text-right mr-3">
-                  <button class="bg-primary hover:bg-dark text-white px-4 py-1 rounded-xl text-sm font-bold">트윗</button>
-                </div>
-              </div>
-            </div>
-            <!-- tweets -->
-            <div class="flex px-3 py-3 border-b border-gray-100" v-for="tweet in 10" :key="tweet">
-              <img src="http://picsum.photos/200" class="w-10 h-10 rounded-full hover:opacity-80 m-2 cursor-pointer" />
-              <div class="ml-3 flex-1 flex flex-col space-y-1">
-                <div class="text-sm space-x-1">
-                  <span class="font-bold">노무현</span>
-                  <span class="text-gray-500" text-xs>@aropark</span>
-                  <span>. </span>
-                  <span class="text-gray-500" text-xs>16 days ago</span>
-                </div>
-                <!-- tweet body -->
-                <div>
-                  테스트용 트윗
-                </div>
-                <!-- tweet actions -->
-                <div class="flex justify-between">
-                  <div class="text-gray-500 hover:bg-blue-50 p-2 hover:text-blue-700 rounded-full">
-                    <i class="far fa-comment  cursor-pointer"></i>
-                    <span class="ml-1 text-gray-500 text-sm">11</span>
-                  </div>
-                  <div class="text-gray-500 hover:bg-green-50 p-2 hover:text-green-700 rounded-full">
-                    <i class="fas fa-retweet  cursor-pointer"></i>
-                    <span class="ml-1 text-gray-500 text-sm">11</span>
-                  </div>
-                  <div class="text-gray-500 hover:bg-red-50 p-2 hover:text-red-700 rounded-full">
-                    <i class="far fa-heart  cursor-pointer"></i>
-                    <span class="ml-1 text-gray-500 text-sm">11</span>
-                  </div>
-                  <div class="text-gray-500 hover:bg-yellow-50 p-2 hover:text-yellow-500 rounded-full">
-                    <i class="far fa-share-square  cursor-pointer"></i>
-                    <span class="ml-1 text-gray-500 text-sm"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- trend section -->
-        <div class="hidden lg:block w-2/5 px-4 py-6">
-          <!--trend section-->
-          <div class="relative mb-7">
-            <!-- tweet search input-->
-            <input type="text"
-              class="rounded-full w-full p-2 pl-10 bg-gray-100 text-sm focus:ring-1 focus:ring-primary focus:bg-white focus:outline-none"
-              placeholder="검색어를 입력해주세요" />
-            <i class="fas fa-search absolute left-0 text-blue-300 ml-3 mt-2 cursor-pointer"></i>
-          </div>
-          <!--trend for me-->
-          <div>
-            <div class="w-full rounded-xl bg-gray-50 flex flex-col">
-              <div class="flex items-center justify-between px-3 py-1 border-b border-gray-100">
-                <!-- 여기에서는 주 축이 가로축이다. 교차축이 세로축이다.-->
-                <span class="text-lg font-bold">나를 위한 트렌드</span>
-                <i class="text-center fas fa-cog text-lg text-blue-300 hover:bg-blue-50 p-2 rounded-full w-10 h-10"></i>
-              </div>
-              <div class="px-3 py-1 border-b border-gray-100 hover:bg-gray-100 cursor-pointer">
-                <div class="flex item-center justify-between">
-                  <span>대한민국에서 트렌드 중</span>
-                  <i class="fa-solid fa-ellipsis text-lg"></i>
-                </div>
-                <div class="text-lg font-bold">러블리즈</div>
-                <div class="mb-2 mt-1">3534 트윗</div>
-              </div>
-              <div class="px-3 py-1 border-b border-gray-100 hover:bg-gray-100 cursor-pointer">
-                <div class="flex item-center justify-between">
-                  <span>대한민국에서 트렌드 중</span>
-                  <i class="fa-solid fa-ellipsis text-lg"></i>
-                </div>
-                <div class="text-lg font-bold">러블리즈</div>
-                <div class="mb-2 mt-1">3534 트윗</div>
-              </div>
-              <div class="px-3 py-1 border-b border-gray-100 hover:bg-gray-100 cursor-pointer">
-                <div class="flex item-center justify-between">
-                  <span>대한민국에서 트렌드 중</span>
-                  <i class="fa-solid fa-ellipsis text-lg"></i>
-                </div>
-                <div class="text-lg font-bold">러블리즈</div>
-                <div class="mb-2 mt-1">3534 트윗</div>
-              </div>
-              <div class="p-3 hover:bg-gray-100 cursor-pointer">
-                <span class="text-xl text-blue-500">더 보기</span>
-              </div>
-            </div>
-          </div>
-          <!--suggested follows-->
-          <div class="mt-5">
-            <div class="w-full rounded-xl bg-gray-50 flex flex-col">
-              <div class="px-3 py-1 border-b border-gray-100">
-                <span class="text-lg font-bold">팔로우 추천</span>
-              </div>
-              <div class="px-3 py-1 border-b border-gray-100 hover:bg-gray-100 cursor-pointer"
-                v-for="trend in 3" :key="trend">
-                <div class="flex items-center">
-                  <img src="http://picsum.photos/200" class="w-12 h-12 rounded-full mr-2">
-                  <div class="flex-1 flex flex-col">
-                    <div class="font-bold p-1">문재인</div>
-                    <div class="text-xs p-1 text-gray-500 text-left">@pr_korea</div>
-                  </div>
-                  <div>
-                    <button class="border-2 border-primary hover:bg-blue-100 px-2 py-1 rounded-full text-purple-300 text-sm"> 팔로우 </button>
-                  </div>
-                </div>
-              </div>
-              <div class="p-3 hover:bg-gray-100 cursor-pointer">
-                <span class="text-xl text-blue-500">더 보기</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- main section -->
+    <div class="flex-1 flex h-screen">
+      <Messages></Messages>
     </div>
-
   </div>
-
 </template>
 
 <script>
+import Home from './pages/Home.vue';
+import Notifications from './pages/Notifications.vue';
+import Messages from './pages/Messages.vue';
 export default {
-
+  components: { Home, Notifications, Messages }
 }
 </script>
 
