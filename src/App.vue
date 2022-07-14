@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen container mx-auto">
     <!-- side section -->
-    <div class="w-20 md:w-1/4 xl:w-1/4 pt-5 xl:ml-10 md:ml-10 flex flex-col justify-between border-r border-gray-100">
+<div class="w-20 md:w-1/4 xl:w-1/4 pt-5 xl:ml-10 md:ml-10 flex flex-col justify-between border-r border-gray-100">
       <!-- 로고와 메뉴바 -->
       <div class="flex flex-col items-center xl:items-start">
         <!-- flext items-center의 경우에는 원래 align-items: flex-start; 인데, 이것은 주 방향과 수직인 교차축에 관련된 것이다.
@@ -10,38 +10,13 @@
         <i class="fa-brands fa-airbnb text-5xl text-primary xl:ml-3 mb-5 mt-5"></i>
         <!-- side 메뉴 부분  -->
         <div class="flex flex-col items-start">
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-house-user fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">Home</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-hashtag fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">HashTag</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-bell fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">Alarm</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-message fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">Message</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-bookmark fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">BookMark</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-list fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">List</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-user fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">Profile</span>
-          </div>
-          <div class="hover:text-hover hover:bg-lime-200 text-original px-4 py-2 rounded-2xl mb-2 cursor-pointer">
-            <i class="fa-solid fa-angles-right fa-fw text-2xl"></i>
-            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">More</span>
-          </div>
+          <router-link :to ="route.path" class="hover:text-hover 
+          hover:bg-lime-200 text-original px-4 py-2 
+          rounded-2xl mb-2 cursor-pointer" v-for="route in routes" :key="route">
+            <i :class="route.icon"></i>
+            <span class="ml-5 text-xl hidden xl:inline-block md:inline-block">{{route.title}}</span>
+          </router-link>
+
         </div>
         <!-- tweet button -->
         <div class="w-12 xl:w-full md:w-40 pr-1 xl:pr-3 md:pr-3 flex justify-center">
@@ -73,18 +48,24 @@
     </div>
     <!-- main section -->
     <div class="flex-1 flex h-screen">
-      <Home/>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Home from './pages/Home.vue';
-import Notifications from './pages/Notifications.vue';
-import Messages from './pages/Messages.vue';
-import Profile from './pages/Profile.vue';
+import {ref, onBeforeMount} from 'vue'
+import router from './router';
 export default {
-  components: { Home, Notifications, Messages, Profile }
+  setup() {
+    const routes = ref([])
+
+    onBeforeMount(() => {
+      routes.value = router.options.routes
+      console.log(routes.value);
+    })
+    return {routes}
+  }
 }
 </script>
 
